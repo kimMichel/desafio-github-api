@@ -3,4 +3,10 @@
 
     <!-- Home -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_repo_name_tools_test">Nome Repositório</string>
+    <string name="home_repo_description_tools_test">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat magna ac sapien fringilla interdum. Vestibulum id metus ultricies, tempus nisl eget, euismod massa. Nulla facilisi. Sed pellentesque mi a massa tincidunt, eget gravida enim consequat. Quisque hendrerit auctor metus, sit amet efficitur neque euismod at. Mauris et metus nec ante eleifend rutrum. Duis vel tortor semper, tempus justo eu, mattis neque. Aliquam ultricies nisi id tellus elementum, vel molestie mauris porttitor. Curabitur vitae leo arcu. Vestibulum non felis sit amet ligula lacinia consectetur.</string>
+    <string name="home_username_tools_test">username</string>
+    <string name="home_name_surname_tools_test">Nome Sobrenome</string>
+    <string name="home_fork_count_tools_test">564</string>
+
 </resources>
