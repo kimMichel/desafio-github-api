@@ -1,6 +1,6 @@
 package br.com.challengegithubapi.models
 
-data class HomeItems(
+data class RepositoryResponse(
     val items: List<HomeItem>
 )
 
