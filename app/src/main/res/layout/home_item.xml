@@ -24,7 +24,7 @@
         android:layout_marginEnd="20dp"
         android:maxLines="2"
         android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/nameSurName"
+        app:layout_constraintEnd_toStartOf="@+id/userName"
         app:layout_constraintStart_toStartOf="@+id/repoName"
         app:layout_constraintTop_toBottomOf="@+id/repoName"
         tools:text="@string/home_repo_description_tools_test" />
@@ -103,16 +103,6 @@
         app:layout_constraintTop_toBottomOf="@+id/userProfileImg"
         tools:text="@string/home_username_tools_test" />
 
-    <TextView
-        android:id="@+id/nameSurName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/grey"
-        app:layout_constraintEnd_toEndOf="@+id/userName"
-        app:layout_constraintStart_toStartOf="@+id/userName"
-        app:layout_constraintTop_toBottomOf="@+id/userName"
-        tools:text="@string/home_name_surname_tools_test" />
-
     <View
         android:id="@+id/itemSeparator"
         android:layout_width="match_parent"
@@ -121,6 +111,6 @@
         android:layout_marginTop="30dp"
         android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameSurName" />
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
