@@ -12,5 +12,6 @@
     <!-- PR Fragment -->
     <string name="pr_title_tools_test">Título do pull request</string>
     <string name="pr_opened">%d opened </string>
+    <string name="empty_prs">Não tem PRs no momento</string>
 
 </resources>

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.challengegithubapi.R
@@ -32,6 +33,7 @@ class PullRequestFragment : Fragment() {
         fetchData()
         setViews()
         setRecycler()
+        setButton()
     }
 
     private fun fetchData() {
@@ -44,11 +46,24 @@ class PullRequestFragment : Fragment() {
     }
 
     private fun setViews() = with(binding) {
-        prOpened.text = getString(R.string.pr_opened, viewModel.requests.size)
-        viewModel.isLoading.observe(viewLifecycleOwner) {
-            recyclerView.isVisible = !it
-            prOpened.isVisible = !it
-            loading.isVisible = it
+        if (viewModel.requests.isEmpty()) {
+            noPrIcon.isVisible = true
+            noPrTxt.isVisible = true
+            recyclerView.isVisible = false
+            prOpened.isVisible = false
+        } else {
+            prOpened.text = getString(R.string.pr_opened, viewModel.requests.size)
+            viewModel.isLoading.observe(viewLifecycleOwner) {
+                recyclerView.isVisible = !it
+                prOpened.isVisible = !it
+                loading.isVisible = it
+            }
+        }
+    }
+
+    private fun setButton() = with(binding) {
+        backButton.setOnClickListener {
+            findNavController().navigateUp()
         }
     }
 
