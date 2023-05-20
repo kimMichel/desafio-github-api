@@ -9,5 +9,18 @@
         android:id="@+id/homeFragment"
         android:name="br.com.challengegithubapi.ui.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_pullRequestFragment"
+            app:destination="@id/pullRequestFragment"
+            app:enterAnim="@anim/enter_animation"
+            app:exitAnim="@anim/exit_animation"
+            app:popEnterAnim="@anim/enter_preview_animation"
+            app:popExitAnim="@anim/exit_preview_animation" />
+    </fragment>
+    <fragment
+        android:id="@+id/pullRequestFragment"
+        android:name="br.com.challengegithubapi.ui.pr.PullRequestFragment"
+        android:label="fragment_pull_request"
+        tools:layout="@layout/fragment_pull_request" />
 </navigation>
