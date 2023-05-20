@@ -30,10 +30,9 @@ class AppRepository(
         try {
             val response = prApiService.getPullRequests(user, repository)
             if (response.isSuccessful) {
-                requests.clear()
                 requests.addAll(response.body() ?: listOf())
             } else {
-                Log.e("Fetch Data", "Failed to fetch data: ${response.code()}")
+                Log.e("Fetch Data", "Failed to fetch data: ${response.code()} cause: ${response.message()}")
             }
         } catch (e: Exception) {
             Log.e("Fetch Data", "Failed to fetch data: ${e.cause}")

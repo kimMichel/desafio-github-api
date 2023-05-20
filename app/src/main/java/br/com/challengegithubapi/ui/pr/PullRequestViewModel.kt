@@ -12,6 +12,8 @@ class PullRequestViewModel(private val repository: AppRepository): ViewModel() {
     val isLoading: MutableLiveData<Boolean> = MutableLiveData()
 
     fun getPRs(user: String, repo: String) = viewModelScope.launch {
+        isLoading.value = true
+        repository.requests.clear()
         repository.fetchPrData(user, repo)
     }.invokeOnCompletion { isLoading.value = false }
 }
