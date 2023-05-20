@@ -12,6 +12,5 @@
     <!-- PR Fragment -->
     <string name="pr_title_tools_test">Título do pull request</string>
     <string name="pr_opened">%d opened </string>
-    <string name="pr_closed">/ %d closed</string>
 
 </resources>
