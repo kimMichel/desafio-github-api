@@ -6,17 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.challengegithubapi.databinding.FragmentHomeBinding
 import org.koin.android.ext.android.inject
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), HomeAdapter.OnHomeClickListener {
 
     private lateinit var binding: FragmentHomeBinding
     private val viewModel: HomeViewModel by inject()
 
-    private val adapter: HomeAdapter = HomeAdapter(viewModel.repositories)
-
+    private lateinit var adapter: HomeAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,11 +40,20 @@ class HomeFragment : Fragment() {
     }
 
     private fun setRecycler() = with(binding) {
+        adapter = HomeAdapter(viewModel.repositories, this@HomeFragment)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
     }
 
     private fun fetchData() {
-        viewModel.getRepositories()
+        if (viewModel.repositories.isEmpty()) {
+            viewModel.getRepositories()
+        }
+    }
+
+    override fun onHomeClick(user: String, repo: String) {
+        HomeFragmentDirections.actionHomeFragmentToPullRequestFragment(user, repo).apply {
+            findNavController().navigate(this)
+        }
     }
 }

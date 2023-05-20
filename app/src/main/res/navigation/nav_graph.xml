@@ -22,5 +22,12 @@
         android:id="@+id/pullRequestFragment"
         android:name="br.com.challengegithubapi.ui.pr.PullRequestFragment"
         android:label="fragment_pull_request"
-        tools:layout="@layout/fragment_pull_request" />
+        tools:layout="@layout/fragment_pull_request">
+        <argument
+            android:name="user"
+            app:argType="string" />
+        <argument
+            android:name="repo"
+            app:argType="string" />
+    </fragment>
 </navigation>

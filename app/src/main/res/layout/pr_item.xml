@@ -8,12 +8,13 @@
 
     <TextView
         android:id="@+id/prTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textColor="@color/blue"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/itemSeparator"
         app:layout_constraintStart_toStartOf="@+id/itemSeparator"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/pr_title_tools_test" />
@@ -22,7 +23,7 @@
         android:id="@+id/prDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
+
         android:maxLines="2"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/itemSeparator"
@@ -65,8 +66,10 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="30dp"
         android:background="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userProfileImg"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

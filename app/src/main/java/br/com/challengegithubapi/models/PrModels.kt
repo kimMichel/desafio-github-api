@@ -1,10 +1,5 @@
 package br.com.challengegithubapi.models
 
-
-data class PRResponse(
-    val requests: List<PullRequestItem>
-)
-
 data class PullRequestItem(
     val title: String,
     val user: User,
